@@ -41,7 +41,7 @@ import java.io.File;
 public class SekCPhysics {
 
     public static final String modid = "sekcphysics";
-    public static final Logger logger = LogManager.getLogger("SekC Physics");
+    public static Logger logger;
 
     public static final String version = "0.0.1";
 
@@ -86,6 +86,7 @@ public class SekCPhysics {
 
     @Mod.EventHandler
     public void preInit(FMLPreInitializationEvent event) {
+        this.logger = event.getModLog();
         configFolder = event.getModConfigurationDirectory();
         ModSettings.preInit(event);
 
